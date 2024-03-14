@@ -24,6 +24,10 @@ repositories {
     mavenCentral()
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 gradlePlugin {
     website.set("https://github.com/touchlab/CrashKiOS")
     vcsUrl.set("https://github.com/touchlab/CrashKiOS.git")
@@ -45,12 +49,6 @@ dependencies {
     implementation(kotlin("compiler-embeddable"))
 
     testImplementation(kotlin("test"))
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
 }
 
 val GROUP: String by project
