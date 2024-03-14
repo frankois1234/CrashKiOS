@@ -12,7 +12,7 @@
  */
 
 plugins {
-    `kotlin-dsl`
+    //`kotlin-dsl`
     kotlin("jvm")
     id("java-gradle-plugin")
     id("com.vanniktech.maven.publish.base")
@@ -22,6 +22,10 @@ plugins {
 repositories {
     gradlePluginPortal()
     mavenCentral()
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 gradlePlugin {
@@ -45,12 +49,6 @@ dependencies {
     implementation(kotlin("compiler-embeddable"))
 
     testImplementation(kotlin("test"))
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
 }
 
 val GROUP: String by project
